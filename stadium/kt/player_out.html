@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <h1 ></h1>
+        <h2> </h2>
+        
+        <p> </p>
+        <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-core.min.js"></script>
+        <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-radar.min.js"></script>
+        <script src="chart.js"></script>
+        <link rel ="stylesheet" href = "player.css">
+        <style type="text/css"> 
+          html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+          }
+        </style>
+        
+    </head>
+    <body>
+        <div id="header">
+            <div id="head">
+              <h1>이름 : 강백호</h1>
+              <p>투타유형 : 우투좌타</p>
+              <p>생년월일 : 1999-07-29</p>
+              <p>체격 : 184cm, 98kg</p>
+            </div>
+            <div id="position">
+              <h1>포지션 : 외야수</h1>
+            </div>
+            <div id="use">
+              <h1>3년간 연봉 및 종합 지표 변화</h1>
+            
+              <div class="containers">
+                <h2>Chart.js Responsive Bar Chart Demo</h2>
+                <div>
+                  <canvas id="barChart"></canvas>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+            <hr>
+            <h1>3년간 스탯 변화</h1>
+            <div id="equips">
+            <div id="stats">
+              <div id="stat_count">
+            <table cellspacing="10">
+              <theader>
+                <tr>
+                  <td>Attribute</td>
+                  <td>Score</td>
+                </tr>
+              </theader>
+               <tbody>
+                 <tr>
+                   <td>득점권타율</td>
+                   <td id="strength_stat">안타/주자 득점권 상황 타석</td>
+                 </tr>
+                 <tr>
+                   <td>wrc+</td>
+                   <td id="magic_stat">조정득점생산력, 타자가 타석당 생산한 득점을 리그평균에 맞게 조정한 값 타자를 판단하는 대표 스탯, 평균 값</td>
+                 </tr>
+                 <tr>
+                   <td>주루 RAA</td>
+                   <td id="accuracy_stat">평균대비 득점 생산 주루, 지표가 0인 선수는 정확히 리그 평균선수의 기여</td>
+                 </tr>
+                 <tr>
+                   <td>수비 RAA</td>
+                   <td id="defence_stat">주루raa와 같은 맥락</td>
+                 </tr>
+                 <tr>
+                   <td>장타율</td>
+                   <td id="resist_stat"> [단타 + (2*2루타) + (3*3루타) + (4*홈런] / 타수 로 계산</td>
+                 </tr>
+                 <tr>
+                   <td>출장타석</td>
+                   <td id="evasion_stat">기간대비 타석수</td>
+                 </tr>
+                 <tr>
+                   <td></td>
+                   <td id="mind_stat"></td>
+                 </tr>
+                 <tr>
+                   <td></td>
+                   <td id="speed_stat"></td>
+                 </tr>
+               </tbody>
+            </table>
+            </div>
+            <div id="stat_hex">
+            </div>
+            </div>
+            <hr>  
+        <div id="container" style="width: 700px; height: 700px;"></div>
+    </body>
+    <script>
+      anychart.onDocumentReady(function () {
+        chart
+        // our data from bulbapedia
+       var data1 = [
+         {x: "득점권타율", value: 0.32/1},
+         {x: "wrc+", value: 149.4/200},
+         {x: "주루RAA", value: 0},
+         {x: "수비RAA", value: -7.1/-20},
+         {x: "장타율", value: 0.544/1},
+         {x: "출장타석", value: 574/600}
+       ];
+  
+       var data2 = [
+         {x: "득점권타율", value: 0.285},
+         {x: "wrc+", value: 157.4/200},
+         {x: "주루RAA", value: 0.91},
+         {x: "수비RAA", value: -9.4/-20},
+         {x: "장타율", value: 0.497},
+         {x: "출장타석", value: 574/600}
+       ];  
+  
+       var data3 = [
+         {x: "득점권타율", value: 0.308},
+         {x: "wrc+", value: 115.3/200},
+         {x: "주루RAA", value: 0},
+         {x: "수비RAA", value: -19.3/-20},
+         {x: "장타율", value: 0.524},
+         {x: "출장타석", value: 574/600}
+       ];  
+  
+       // create radar chart
+       var chart = anychart.radar();
+  
+       // set chart yScale settings
+       chart.yScale()
+         .minimum(0)
+         .maximum(1)
+         .ticks({'interval':5});
+  
+        // color alternating cells
+        chart.yGrid().palette(["gray 0.1", "gray 0.2"]);
+  
+        // create first series
+        chart.area(data1).name('2020').markers(true).fill("#E55934", 0.3).stroke("#E55934")
+        // create second series
+        chart.area(data2).name('2019').markers(true).fill("#9BC53D", 0.3).stroke("#9BC53D")
+        // create third series
+        chart.area(data3).name('2018').markers(true).fill("#5BC0EB", 0.3).stroke("#5BC0EB")
+  
+        // set chart title
+        chart.title("강백호 Stat")
+          // set legend
+          .legend(true);
+  
+        // set container id for the chart
+        chart.container('container');
+        // initiate chart drawing
+        chart.draw();
+  
+      });
+      
+
+
+    </script>
+</html>

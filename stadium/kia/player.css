@@ -1,0 +1,161 @@
+
+#header {
+    height:260px;
+    background-color:white;
+    display:flex;
+  }
+  #head {
+    background-color:white;
+    font-size:15px;
+  }
+  #mstats {
+    background-color:pink;
+  }
+  #use {
+    
+    font-size:25px;
+
+  }
+  #position{
+    background:url('kia.png') no-repeat;
+    background-size:contain;
+    background-position: center;
+    display:inline-block;
+    font-size:15px;
+    height:200px;
+    width:50%;
+  }
+  #mstats, #head, #use {
+    font-family:Ariel;
+    display:inline-block;
+    height:150px;
+    width:50%;
+    font-size:17px;
+  }
+  #stat_count {
+    width:68%;
+    font-size:15px;
+  }
+  #stat_hex {
+    width:32%;
+  }
+  #stats {
+    height:350px;
+    display:flex;
+    font-size:30px;
+  }
+  h4 {
+    text-align:center;
+  }
+  #drop_head {
+    padding-top:9px;
+  }
+  .fit-picture {
+    width:70px;
+    height:70px;
+    margin-left:80px;
+  }
+  body {
+    margin: 0;
+  }
+  body, div, p, a, canvas {
+      -moz-user-select: none; 
+      -khtml-user-select: none; 
+      -webkit-user-select: none; 
+      -o-user-select: none; 
+  }
+  .absolute-center {
+    position: absolute;
+    margin: auto;
+    left: 0; right: 0; top: 0; bottom: 0;
+  }
+  #stat_view {
+    height:190px;
+  }
+  #equips {
+    display:flex;
+  }
+  
+  #eq_weap, #eq_arm, #eq_acc {
+    background-color:#5385c1;
+    height:70px;
+  }
+  
+  .containers {
+    width: 80%;
+    margin: 20px auto;
+  }
+  
+  .p {
+    text-align: center;
+    font-size: 14px;
+    padding-top: 140px;
+  }
+  html {
+    font-size: 62.5%;
+  }
+  
+  body {
+    font-size: 1.6rem;
+    font-family: "Jaldi", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: graysale;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  h1 {
+    text-align: center;
+    width: 90%;
+    margin: 2em auto 0;
+    font-size: 25px;
+    color: black;
+    font-weight: bold;
+  }
+  @media only screen and (min-width: 600px) {
+    h1 {
+      font-size: 2em;
+    }
+  }
+  
+  input {
+    font-family: "Jaldi", sans-serif;
+    font-size: 1.6rem;
+  }
+  
+
+  ul {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 100%;
+      font: inherit;
+      vertical-align: baseline;
+  }
+  /* HTML5 display-role reset for older browsers */
+  article, aside, details, figcaption, figure, 
+  footer, header, hgroup, menu, nav, section, main {
+      display: block;
+  }
+  body {
+      line-height: 1;
+  }
+  
+  table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      font-size : 25px;
+  }
+  /*******END_ACCORDIAN******/
+  .containers {
+    width: 80%;
+    margin: 20px auto;
+  }
+  
+  .p {
+    text-align: center;
+    font-size: 14px;
+    padding-top: 140px;
+  }

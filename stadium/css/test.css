@@ -1,0 +1,5 @@
+// set chart yScale settings
+chart.yScale()
+  .minimum(35)
+  .maximum(65)
+  .ticks({'interval':5});
